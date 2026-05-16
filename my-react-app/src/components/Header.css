@@ -1,0 +1,133 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 12px 24px;
+  background: var(--ucla-blue);
+  border-bottom: 1px solid var(--ucla-blue-dark);
+}
+
+.navbar__search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 480px;
+}
+
+.navbar__search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+
+.navbar__search {
+  width: 100%;
+  padding: 9px 18px 9px 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 14px;
+  font-family: var(--sans);
+  box-sizing: border-box;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.navbar__search::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar__search:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.navbar__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 14px;
+  border-radius: 0;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar__link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.navbar__link--active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__button {
+  border: none;
+  background: var(--ucla-gold);
+  color: var(--ucla-blue-dark);
+  padding: 9px 16px;
+  border-radius: 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.navbar__button--ghost {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.navbar__button:hover {
+  background: var(--ucla-gold-dark);
+}
+
+.navbar__button--ghost:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+@media (max-width: 720px) {
+  .navbar__links {
+    display: none;
+  }
+}

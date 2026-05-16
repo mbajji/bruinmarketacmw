@@ -1,0 +1,220 @@
+/* Page layout */
+.communities {
+  background: #F4F6F9;
+  min-height: 100%;
+}
+
+.communities__header {
+  background: white;
+  padding: 44px 64px 36px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.communities__title {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-h);
+}
+
+.communities__subtitle {
+  margin: 10px 0 0 0;
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(17, 24, 39, 0.65);
+  font-size: 15px;
+  max-width: 68ch;
+}
+
+.communities__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  padding: 44px 64px;
+}
+
+/* Card */
+.community-card {
+  grid-column: span 12;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .community-card {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .community-card {
+    grid-column: span 4;
+  }
+}
+
+.community-card__body {
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.community-card__pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: 0;
+  background: rgba(39, 116, 174, 0.12);
+  color: var(--ucla-blue-dark);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.community-card__title {
+  margin: 14px 0 0 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text-h);
+}
+
+.community-card__description {
+  margin: 10px 0 0 0;
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(17, 24, 39, 0.7);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.community-card__body--event .community-card__description {
+  max-width: 62ch;
+}
+
+.event-meta {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+  color: rgba(17, 24, 39, 0.75);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.event-meta__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.event-meta__icon {
+  width: 18px;
+  height: 18px;
+  color: var(--ucla-blue);
+  flex: 0 0 auto;
+}
+
+.community-card__cta {
+  margin-top: auto;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 13px 14px;
+  background: var(--ucla-blue);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.community-card__cta:hover {
+  background: var(--ucla-blue-dark);
+  transform: translateY(-1px);
+}
+
+.community-card__cta:active {
+  transform: translateY(1px);
+}
+
+/* Add-event tile (matches event card box, gray + dashed) */
+.community-card--add {
+  background: #F4F6F9;
+  border: 1.5px dashed rgba(17, 24, 39, 0.22);
+  text-decoration: none;
+  color: rgba(17, 24, 39, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.community-card--add:hover {
+  background: #EBEEF3;
+  border-color: var(--ucla-blue);
+  color: var(--ucla-blue-dark);
+}
+
+.community-card--add__inner {
+  text-align: center;
+  padding: 24px;
+}
+
+.community-card--add__plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(17, 24, 39, 0.06);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  color: inherit;
+}
+
+.community-card--add:hover .community-card--add__plus {
+  background: rgba(39, 116, 174, 0.12);
+}
+
+.community-card--add__title {
+  margin: 14px 0 4px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+.community-card--add__sub {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: rgba(17, 24, 39, 0.5);
+}
+
+@media (max-width: 1100px) {
+  .communities__header { padding: 36px 40px 28px; }
+  .communities__grid   { padding: 36px 40px; }
+}
+
+@media (max-width: 820px) {
+  .communities__header { padding: 28px 24px 22px; }
+  .communities__grid   { padding: 28px 24px; gap: 14px; }
+}
